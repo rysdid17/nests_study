@@ -23,9 +23,14 @@ export class MyLogger extends ConsoleLogger {
     super.log.apply(this, arguments);
     this.doSomething();
   }
+  error(message: any, stack?: string, context?: string){
+    this.doSomething();
+    super.error.apply(this, arguments);
+  }
 
   private doSomething() {
     // 여기에 로깅에 관련된 부가 로직을 추가합니다.
     // ex. DB에 저장    
+    console.log("MYLOGGER!");
   }
 }
