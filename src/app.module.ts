@@ -1,11 +1,11 @@
+import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { LoggerModule } from './logging/logger.module';
+import { TerminusModule } from '@nestjs/terminus';
+import { BatchModule } from './batch/batch.module';
 
 @Module({
-  imports: [LoggerModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    BatchModule,
+  ],
 })
 export class AppModule { }
