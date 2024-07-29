@@ -6,10 +6,8 @@ import { HttpModule } from '@nestjs/axios';
 import { DogHealthIndicator } from './health-check/dog.health';
 
 @Module({
-  imports: [
-    BatchModule, TerminusModule, HttpModule
-  ],
-  providers: [HealthCheckController, DogHealthIndicator],
-  controllers: [],
+  imports: [BatchModule, TerminusModule, HttpModule],
+  providers: [DogHealthIndicator],
+  controllers: [HealthCheckController],
 })
 export class AppModule { }
